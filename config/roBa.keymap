@@ -7,7 +7,6 @@
 #define SCROLL 5
 #define NUM 6
 
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -24,7 +23,6 @@
     //         <&kp LEFT_ARROW>,
     //         <&kp UP_ARROW>,
     //         <&kp DOWN_ARROW>;
-
     //     tick = <10>;
     //     wait-ms = <5>;
     //     tap-ms = <5>;
@@ -241,13 +239,13 @@
 
         num_backspace {
             bindings = <&mt_exit_AML_on_hold BACKSPACE BACKSPACE>;
-            key-positions = <3 4>;
+            key-positions = <10 11>;
             layers = <2>;
         };
 
         num_delete {
             bindings = <&mt_exit_AML_on_hold DELETE DELETE>;
-            key-positions = <3 4>;
+            key-positions = <0 1>;
             layers = <2>;
         };
     };
