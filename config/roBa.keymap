@@ -237,12 +237,6 @@
             layers = <2>;
         };
 
-        num_equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <26 25>;
-            layers = <2>;
-        };
-
         backslash {
             bindings = <&kp BACKSLASH>;
             key-positions = <7 8>;
