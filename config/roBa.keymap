@@ -33,8 +33,8 @@
     combos {
         compatible = "zmk,combos";
 
-        delete {
-            bindings = <&mt_exit_AML_on_hold BACKSPACE DELETE>;
+        backspace {
+            bindings = <&mt_exit_AML_on_hold DELETE BACKSPACE>;
             key-positions = <8 9>;
             layers = <0 4>;
         };
@@ -657,7 +657,7 @@
 &mt_exit_AML_on_tap Q TAB               &kp_exit_AML W                  &kp_exit_AML E                  &kp_exit_AML R                    &kp_exit_AML T                                                                           &kp_exit_AML Y                &kp_exit_AML U  &kp_exit_AML I                     &lt_exit_AML 5 O                  &mt_exit_AML MINUS P
 &kp_exit_AML A                          &kp_exit_AML S                  &kp_exit_AML D                  &kp_exit_AML F                    &kp_exit_AML G        &ht_kp_mkp_exit_AML ESCAPE LCLK      &kp_exit_AML UP_ARROW         &kp_exit_AML H                &kp_exit_AML J  &kp_exit_AML K                     &kp_exit_AML L                    &mt_exit_AML ASTERISK ENTER
 &mt_exit_AML_on_tap LEFT_SHIFT Z        &kp_exit_AML X                  &kp_exit_AML C                  &kp_exit_AML V                    &kp_exit_AML B        &kp_exit_AML LG(E)                   &kp_exit_AML DOWN_ARROW       &kp_exit_AML N                &kp_exit_AML M  &mt_exit_AML LA(LEFT_ARROW) COMMA  &mt_exit_AML LA(RIGHT_ARROW) DOT  &mt_exit_AML_on_tap RIGHT_SHIFT SLASH
-&mt_exit_AML_on_tap LCTRL LEFT_CONTROL  &mt_exit_AML LEFT_WIN LEFT_GUI  &mt_exit_AML LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt_exit_AML 2 SPACE  &lt_exit_AML 3 ENTER                 &mt_exit_AML HOME LEFT_ARROW  &mt_exit_AML END RIGHT_ARROW                                                                                       &lt_exit_AML_on_hold 2 BACKSPACE
+&mt_exit_AML_on_tap LCTRL LEFT_CONTROL  &mt_exit_AML LEFT_WIN LEFT_GUI  &mt_exit_AML LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt_exit_AML 2 SPACE  &lt_exit_AML 3 ENTER                 &mt_exit_AML HOME LEFT_ARROW  &mt_exit_AML END RIGHT_ARROW                                                                                       &lt_exit_AML_on_hold 2 DELETE
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
