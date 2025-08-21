@@ -693,7 +693,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &shift_click    &mkp_exit_AML LCLK  &trans  &mkp_exit_AML RCLK
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &control_click  &trans              &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &control_click  &kp_exit_AML F9     &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans          &trans              &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                              &trans
             >;
