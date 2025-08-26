@@ -683,10 +683,10 @@
 
         PASS {
             bindings = <
-&trans  &trans          &trans         &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-&trans  &face_sumareji  &face_default  &trans  &face_google  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans         &trans  &trans        &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans         &trans  &trans        &trans      &trans  &trans                          &trans
+&kp LG(N1)  &kp LG(N2)      &kp LG(N3)     &kp LG(N4)  &kp LG(N5)                        &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LC(N0)
+&trans      &face_sumareji  &face_default  &trans      &face_google  &trans      &trans  &trans      &trans      &trans      &trans      &trans
+&trans      &trans          &trans         &trans      &trans        &trans      &trans  &trans      &trans      &trans      &trans      &trans
+&trans      &trans          &trans         &trans      &trans        &trans      &trans  &trans                                          &trans
             >;
         };
 
