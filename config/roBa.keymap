@@ -688,10 +688,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &control_click  &shift_click        &trans           &mkp_exit_AML RCLK
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans          &mkp_exit_AML LCLK  &kp_exit_AML F9  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans          &trans              &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                       &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &mkp_exit_AML LCLK  &trans           &mkp_exit_AML RCLK
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &shift_click        &kp_exit_AML F9  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans              &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                               &trans
             >;
         };
 
