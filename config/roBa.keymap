@@ -13,7 +13,7 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
+    //automouse-layer = <4>;
     scroll-layers = <5>;
 
     // arrows {
@@ -571,6 +571,28 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_kp_mkp_exit_AML";
             bindings = <&kp_exit_AML>, <&mkp_exit_AML>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_kp_shihft_click: ht_kp_shihft_click {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_kp_shihft_click";
+            bindings = <&shift_click>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_kp_control_click: ht_kp_control_click {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_kp_control_click";
+            bindings = <&control_click>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
