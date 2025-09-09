@@ -47,13 +47,13 @@
 
         left_bracket {
             bindings = <&kp_exit_AML LEFT_BRACKET>;
-            key-positions = <20 19>;
+            key-positions = <19 20>;
             layers = <0>;
         };
 
         right_bracket {
             bindings = <&kp_exit_AML RIGHT_BRACKET>;
-            key-positions = <21 20>;
+            key-positions = <20 21>;
             layers = <0>;
         };
 
@@ -65,13 +65,13 @@
 
         semi_colon {
             bindings = <&kp_exit_AML SEMICOLON>;
-            key-positions = <31 32>;
+            key-positions = <31 30>;
             layers = <0>;
         };
 
         colon {
             bindings = <&kp_exit_AML COLON>;
-            key-positions = <32 33>;
+            key-positions = <32 31>;
             layers = <0>;
         };
 
@@ -135,12 +135,6 @@
             layers = <2>;
         };
 
-        cell_setting {
-            bindings = <&kp LC(NUMBER_1)>;
-            key-positions = <22 34>;
-            layers = <2>;
-        };
-
         paste_fomulas_only {
             bindings = <&paste_formulas_only>;
             key-positions = <13 9>;
@@ -160,19 +154,19 @@
         };
 
         language {
-            bindings = <&kp_exit_AML LS(CLCK)>;
+            bindings = <&kp LS(CLCK)>;
             key-positions = <0 1>;
             layers = <0 4>;
         };
 
         left_shift {
-            bindings = <&lt_exit_AML 1 LEFT_SHIFT>;
+            bindings = <&lt 1 LEFT_SHIFT>;
             key-positions = <22 23>;
             layers = <0>;
         };
 
         right_shift {
-            bindings = <&lt_exit_AML 1 RIGHT_SHIFT>;
+            bindings = <&lt 1 RIGHT_SHIFT>;
             key-positions = <32 33>;
             layers = <0>;
         };
@@ -226,19 +220,19 @@
         };
 
         num_backspace {
-            bindings = <&mt_exit_AML_on_hold BACKSPACE BACKSPACE>;
+            bindings = <&mt BACKSPACE BACKSPACE>;
             key-positions = <10 11>;
             layers = <2>;
         };
 
         num_delete {
-            bindings = <&mt_exit_AML_on_hold DELETE DELETE>;
+            bindings = <&mt DELETE DELETE>;
             key-positions = <0 1>;
             layers = <2>;
         };
 
-        backslash {
-            bindings = <&kp BACKSLASH>;
+        minus {
+            bindings = <&kp MINUS>;
             key-positions = <7 8>;
             layers = <0>;
         };
@@ -672,10 +666,10 @@
 
         default_layer {
             bindings = <
-&mt_exit_AML_on_tap Q TAB               &kp_exit_AML W                  &kp_exit_AML E                  &kp_exit_AML R                    &kp_exit_AML T                                                                           &kp_exit_AML Y                &kp_exit_AML U  &kp_exit_AML I                     &lt_exit_AML 5 O                  &mt_exit_AML MINUS P
-&kp_exit_AML A                          &kp_exit_AML S                  &kp_exit_AML D                  &kp_exit_AML F                    &kp_exit_AML G        &ht_kp_mkp_exit_AML ESCAPE LCLK      &kp_exit_AML UP_ARROW         &kp_exit_AML H                &kp_exit_AML J  &kp_exit_AML K                     &kp_exit_AML L                    &mt_exit_AML_on_hold SLASH BACKSPACE
-&mt_exit_AML_on_tap LEFT_SHIFT Z        &kp_exit_AML X                  &kp_exit_AML C                  &kp_exit_AML V                    &kp_exit_AML B        &kp_exit_AML LG(E)                   &kp_exit_AML DOWN_ARROW       &kp_exit_AML N                &kp_exit_AML M  &mt_exit_AML LA(LEFT_ARROW) COMMA  &mt_exit_AML LA(RIGHT_ARROW) DOT  &mt_exit_AML_on_tap RIGHT_SHIFT MINUS
-&mt_exit_AML_on_tap LCTRL LEFT_CONTROL  &mt_exit_AML LEFT_WIN LEFT_GUI  &mt_exit_AML LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt_exit_AML 2 SPACE  &lt_exit_AML 3 LS(CAPSLOCK)          &mt_exit_AML HOME LEFT_ARROW  &mt_exit_AML END RIGHT_ARROW                                                                                       &lt_exit_AML 2 ENTER
+&mt Q TAB                      &kp W                  &kp E                  &kp R                             &kp T                                                  &kp Y              &kp U  &ht_kp_shihft_click I I   &kp O                    &lt 5 P
+&kp A                          &kp S                  &kp D                  &kp F                             &kp G        &kp ESCAPE              &kp UP_ARROW      &kp H              &kp J  &ht_kp_control_click K K  &kp L                    &mt_exit_AML_on_hold SLASH BACKSPACE
+&mt LEFT_SHIFT Z               &kp X                  &kp C                  &kp V                             &kp B        &kp LG(E)               &kp DOWN_ARROW    &kp N              &kp M  &mt LA(LEFT_ARROW) COMMA  &mt LA(RIGHT_ARROW) DOT  &mt RIGHT_SHIFT MINUS
+&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt 2 SPACE  &lt 3 LS(CAPSLOCK)      &lt 2 LEFT_ARROW  &lt 2 RIGHT_ARROW                                                            &lt 4 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -692,14 +686,14 @@
 
         NUM_SHORTCUT {
             bindings = <
-&kp KP_NUMBER_7               &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK          &kp KP_DIVIDE                                                                                    &trans                      &kp F10  &kp F7  &kp F8  &kp F9
-&kp KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt LC(KP_PLUS) KP_PLUS  &mt LC(KP_MINUS) KP_MINUS  &kp_exit_AML LC(KP_NUMBER_0)      &kp_exit_AML LC(TAB)                &trans                      &kp F11  &kp F4  &kp F5  &kp F6
-&mt LEFT_SHIFT KP_NUMBER_1    &kp KP_NUMBER_2  &kp KP_NUMBER_3  &sum                     &sumproduct                &kp_exit_AML EQUAL                &kp_exit_AML LC(LS(TAB))            &trans                      &kp F12  &kp F1  &kp F2  &kp F3
-&mt LC(NUMBER_1) KP_NUMBER_0  &double_zero     &kp KP_DOT       &trans                   &trans                     &trans                            &mt_exit_AML LA(LS(K)) LC(PAGE_UP)  &kp_exit_AML LC(PAGE_DOWN)                           &trans
+&kp KP_NUMBER_7               &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK          &kp KP_DIVIDE                                                                  &trans             &kp F10  &kp F7  &kp F8  &kp F9
+&kp KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt LC(KP_PLUS) KP_PLUS  &mt LC(KP_MINUS) KP_MINUS  &kp LC(KP_NUMBER_0)      &kp LC(TAB)                &trans             &kp F11  &kp F4  &kp F5  &kp F6
+&mt LEFT_SHIFT KP_NUMBER_1    &kp KP_NUMBER_2  &kp KP_NUMBER_3  &sum                     &sumproduct                &kp EQUAL                &kp LC(LS(TAB))            &trans             &kp F12  &kp F1  &kp F2  &kp F3
+&mt LC(NUMBER_1) KP_NUMBER_0  &double_zero     &kp KP_DOT       &kp HOME                 &trans                     &kp END                  &mt LA(LS(K)) LC(PAGE_UP)  &kp LC(PAGE_DOWN)                           &trans
             >;
         };
 
-        PASS {
+        APP_CTRL_PASS {
             bindings = <
 &kp LG(N1)  &kp LG(N2)      &kp LG(N3)     &kp LG(N4)  &kp LG(N5)                        &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp LC(N0)
 &trans      &face_sumareji  &face_default  &trans      &face_google  &trans      &trans  &trans      &trans      &trans      &trans      &trans
@@ -710,10 +704,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &mkp_exit_AML LCLK  &trans           &mkp_exit_AML RCLK
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &shift_click        &kp_exit_AML F9  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans              &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                               &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &shift_click    &mkp LCLK  &mkp RCLK  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &control_click  &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans          &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                        &trans
             >;
         };
 
