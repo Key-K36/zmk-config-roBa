@@ -599,10 +599,10 @@
 
         default_layer {
             bindings = <
-&mt Q TAB                      &kp W                  &kp E                  &kp R                             &kp T                                                 &kp Y         &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
-&kp A                          &kp S                  &kp D                  &kp F                             &kp G        &kp ESCAPE              &kp HOME         &kp H         &kp J  &kp K                &mt AT_SIGN L  &mt_exit_AML_on_hold RIGHT_BRACKET MINUS
-&mt LEFT_SHIFT Z               &kp X                  &kp C                  &kp V                             &kp B        &kp LG(E)               &kp END          &kp N         &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt RIGHT_SHIFT SLASH
-&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt 2 SPACE  &lt 1 LS(CAPSLOCK)      &lt 1 BACKSPACE  &lt 3 DELETE                                             &lt 2 ENTER
+&mt Q TAB                      &kp W                  &kp E                  &kp R                             &kp T                                                                  &kp Y                          &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
+&kp A                          &kp S                  &kp D                  &kp F                             &kp G        &kp ESCAPE              &kp HOME                          &kp H                          &kp J  &kp K                &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
+&mt LEFT_SHIFT Z               &kp X                  &kp C                  &kp V                             &kp B        &kp LG(E)               &kp END                           &kp N                          &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt RIGHT_SHIFT SLASH
+&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt 2 SPACE  &lt 1 LS(CAPSLOCK)      &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML_on_hold 3 DELETE                                             &lt 2 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
