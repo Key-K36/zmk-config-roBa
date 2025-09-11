@@ -42,37 +42,7 @@
 
         fanction_7 {
             bindings = <&kp_exit_AML F7>;
-            key-positions = <3 4>;
-            layers = <0>;
-        };
-
-        left_bracket {
-            bindings = <&kp_exit_AML LEFT_BRACKET>;
-            key-positions = <19 20>;
-            layers = <0>;
-        };
-
-        right_bracket {
-            bindings = <&kp_exit_AML RIGHT_BRACKET>;
-            key-positions = <20 21>;
-            layers = <0>;
-        };
-
-        at_sign {
-            bindings = <&kp_exit_AML AT_SIGN>;
-            key-positions = <18 19>;
-            layers = <0>;
-        };
-
-        semi_colon {
-            bindings = <&kp_exit_AML SEMICOLON>;
-            key-positions = <31 30>;
-            layers = <0>;
-        };
-
-        colon {
-            bindings = <&kp_exit_AML COLON>;
-            key-positions = <32 31>;
+            key-positions = <5 6>;
             layers = <0>;
         };
 
@@ -160,18 +130,6 @@
             layers = <0 4>;
         };
 
-        left_shift {
-            bindings = <&lt 1 LEFT_SHIFT>;
-            key-positions = <22 23>;
-            layers = <0>;
-        };
-
-        right_shift {
-            bindings = <&lt 1 RIGHT_SHIFT>;
-            key-positions = <32 33>;
-            layers = <0>;
-        };
-
         right_alignment {
             bindings = <&right_alignment>;
             key-positions = <3 10>;
@@ -208,45 +166,15 @@
             layers = <2>;
         };
 
-        welcart_first {
-            bindings = <&welcart_first>;
-            key-positions = <1 22>;
-            layers = <3>;
-        };
-
-        welcart_second {
-            bindings = <&welcart_second>;
-            key-positions = <1 23>;
-            layers = <3>;
-        };
-
-        num_backspace {
-            bindings = <&mt BACKSPACE BACKSPACE>;
-            key-positions = <10 11>;
-            layers = <2>;
-        };
-
-        num_delete {
-            bindings = <&mt DELETE DELETE>;
-            key-positions = <0 1>;
-            layers = <2>;
-        };
-
-        minus {
-            bindings = <&kp MINUS>;
-            key-positions = <7 8>;
-            layers = <0>;
-        };
-
         tilde {
             bindings = <&kp TILDE>;
-            key-positions = <7 6>;
+            key-positions = <7 8>;
             layers = <0>;
         };
 
         equal {
             bindings = <&kp EQUAL>;
-            key-positions = <6 5>;
+            key-positions = <6 7>;
             layers = <0>;
         };
     };
@@ -502,24 +430,6 @@
             label = "FACE_GOOGLE";
         };
 
-        welcart_first: welcart_first {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp L &kp A &kp C &kp E &kp TAB &kp LS(B) &kp F &kp J &kp K &kp LS(V) &kp LS(G) &kp LS(W) &kp LS(O) &kp ENTER>;
-            label = "WELCART_FIRST";
-        };
-
-        welcart_second: welcart_second {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp K &kp I &kp S &kp A &kp B &kp U &kp R &kp O &kp UNDER &kp C &kp H &kp I &kp K &kp A &kp Z &kp A &kp W &kp A &kp UNDER &kp A &kp D &kp M &kp I &kp N &kp TAB>,
-                <&macro_wait_time 500>,
-                <&kp LS(P) &kp V &kp N4 &kp LS(C) &kp POUND &kp LS(S) &kp POUND &kp LS(S) &kp STAR &kp LS(Z) &kp LS(L) &kp LS(W) &kp A &kp N1 &kp LS(Z) &kp N5 &kp O &kp LS(F) &kp LS(K) &kp N4 &kp LS(T) &kp N8 &kp N0 &kp B &kp ENTER>;
-
-            label = "WELCART_SECOND";
-        };
-
         double_zero: double_zero {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -588,6 +498,28 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_kp_control_click";
             bindings = <&control_click>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_kp_sum: ht_kp_sum {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_kp_sum";
+            bindings = <&sum>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_kp_sumproduct: ht_kp_sumproduct {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_kp_sumproduct";
+            bindings = <&sumproduct>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -667,10 +599,10 @@
 
         default_layer {
             bindings = <
-&mt Q TAB                      &kp W                  &kp E                  &kp R                             &kp T                                                  &kp Y              &kp U  &ht_kp_shihft_click I I   &lt 4 O                  &mt MINUS P
-&kp A                          &kp S                  &kp D                  &kp F                             &kp G        &kp ESCAPE              &kp UP_ARROW      &kp H              &kp J  &ht_kp_control_click K K  &mt F9 L                 &mt_exit_AML_on_hold SLASH BACKSPACE
-&mt LEFT_SHIFT Z               &kp X                  &kp C                  &kp V                             &kp B        &kp LG(E)               &kp DOWN_ARROW    &kp N              &kp M  &mt LA(LEFT_ARROW) COMMA  &mt LA(RIGHT_ARROW) DOT  &mt RIGHT_SHIFT MINUS
-&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt 2 SPACE  &lt 3 LS(CAPSLOCK)      &lt 2 LEFT_ARROW  &lt 2 RIGHT_ARROW                                                            &lt 5 ENTER
+&mt Q TAB                      &kp W                  &kp E                  &kp R                             &kp T                                                 &kp Y         &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
+&kp A                          &kp S                  &kp D                  &kp F                             &kp G        &kp ESCAPE              &kp HOME         &kp H         &kp J  &kp K                &mt AT_SIGN L  &mt_exit_AML_on_hold RIGHT_BRACKET MINUS
+&mt LEFT_SHIFT Z               &kp X                  &kp C                  &kp V                             &kp B        &kp LG(E)               &kp END          &kp N         &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt RIGHT_SHIFT SLASH
+&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt 2 SPACE  &lt 1 LS(CAPSLOCK)      &lt 1 BACKSPACE  &lt 3 DELETE                                             &lt 2 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -685,12 +617,12 @@
             >;
         };
 
-        NUM_SHORTCUT {
+        MOUSE_NUM {
             bindings = <
-&kp KP_NUMBER_7               &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK          &kp KP_DIVIDE                                                                  &trans             &kp F10  &kp F7  &kp F8  &kp F9
-&kp KP_NUMBER_4               &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt LC(KP_PLUS) KP_PLUS  &mt LC(KP_MINUS) KP_MINUS  &kp LC(KP_NUMBER_0)      &kp LC(TAB)                &trans             &kp F11  &kp F4  &kp F5  &kp F6
-&mt LEFT_SHIFT KP_NUMBER_1    &kp KP_NUMBER_2  &kp KP_NUMBER_3  &sum                     &sumproduct                &kp EQUAL                &kp LC(LS(TAB))            &trans             &kp F12  &kp F1  &kp F2  &kp F3
-&mt LC(NUMBER_1) KP_NUMBER_0  &double_zero     &kp KP_DOT       &kp HOME                 &trans                     &kp END                  &mt LA(LS(K)) LC(PAGE_UP)  &kp LC(PAGE_DOWN)                           &trans
+&kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK          &kp KP_DIVIDE                                                &kp F2  &ht_kp_shihft_click 0 LA(RIGHT_ARROW)  &mkp LCLK                          &trans                             &mkp RCLK
+&kp KP_NUMBER_4                  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt LC(KP_PLUS) KP_PLUS  &mt LC(KP_MINUS) KP_MINUS  &trans             &kp LC(SPACE)  &kp F4  &ht_kp_control_click 0 LA(LEFT_ARROW)  &mt LC(LS(TAB)) LC(PAGE_UP)        &mt LC(LS(UP_ARROW)) UP_ARROW      &mt LC(TAB) LC(PAGE_DOWN)
+&mt LC(NUMBER_1) KP_NUMBER_1     &kp KP_NUMBER_2  &kp KP_NUMBER_3  &ht_kp_sum 0 EQUAL       &ht_kp_sumproduct 0 EQUAL  &kp LA(LS(K))      &kp LS(SPACE)  &kp F9  &kp F12                                &mt LC(LS(LEFT_ARROW)) LEFT_ARROW  &mt LC(LS(DOWN_ARROW)) DOWN_ARROW  &mt LC(LS(RIGHT_ARROW)) RIGHT_ARROW
+&mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &kp KP_DOT       &trans                   &trans                     &trans             &trans         &trans                                                                                                               &trans
             >;
         };
 
