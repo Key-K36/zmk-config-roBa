@@ -472,6 +472,15 @@
             toggle-mode = "off";
         };
 
+        ht_any_macro_kp: ht_any_macro_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_any_macro_kp";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
         ht_kp_mkp_exit_AML: ht_kp_mkp_exit_AML {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_kp_mkp_exit_AML";
@@ -486,7 +495,7 @@
         ht_kp_shihft_click: ht_kp_shihft_click {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_kp_shihft_click";
-            bindings = <&shift_click>, <&kp>;
+            bindings = <&kp>, <&shift_click>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -497,7 +506,7 @@
         ht_kp_control_click: ht_kp_control_click {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_kp_control_click";
-            bindings = <&control_click>, <&kp>;
+            bindings = <&kp>, <&control_click>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
