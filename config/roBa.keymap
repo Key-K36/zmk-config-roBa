@@ -187,6 +187,34 @@
             label = "TO_LAYER_0";
         };
 
+        shift_click: shift_crick {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&mkp LCLK>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "SHIFT_CRICK";
+        };
+
+        control_click: contolor_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&mkp LCLK>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
+            label = "CONTOLOR_CLICK";
+        };
+
         exit_AML: exit_AML {
             compatible = "zmk,behavior-macro";
             wait-ms = <0>;
@@ -346,20 +374,6 @@
             label = "ROUND";
         };
 
-        shift_click: shift_crick {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&mkp LCLK>,
-                <&macro_release>,
-                <&kp LEFT_SHIFT>;
-
-            label = "SHIFT_CRICK";
-        };
-
         paste_formulas_only: paste_formulas_only {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -393,20 +407,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT &kp M &kp X &kp M>;
             label = "AUTO_CALCULATION_OFF";
-        };
-
-        control_click: contolor_click {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_CONTROL>,
-                <&macro_tap>,
-                <&mkp LCLK>,
-                <&macro_release>,
-                <&kp LEFT_CONTROL>;
-
-            label = "CONTOLOR_CLICK";
         };
 
         face_default: face_default {
@@ -472,21 +472,10 @@
             toggle-mode = "off";
         };
 
-        ht_kp_mkp_exit_AML: ht_kp_mkp_exit_AML {
+        ht_shift_control_click: ht_shift_control_click {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_kp_mkp_exit_AML";
-            bindings = <&kp_exit_AML>, <&mkp_exit_AML>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-        };
-
-        ht_kp_shihft_click: ht_kp_shihft_click {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_kp_shihft_click";
-            bindings = <&kp>, <&shift_click>;
+            label = "HT_SHIFT_CONTROL_CLICK";
+            bindings = <&control_click>, <&shift_click>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -520,6 +509,17 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_kp_sumproduct";
             bindings = <&sumproduct>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_kp_mkp_exit_AML: ht_kp_mkp_exit_AML {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_kp_mkp_exit_AML";
+            bindings = <&kp_exit_AML>, <&mkp_exit_AML>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -594,16 +594,15 @@
         };
     };
 
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&mt Q TAB                      &kp W                  &kp E                  &kp R                             &kp T                                                                  &kp Y                          &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
-&kp A                          &kp S                  &kp D                  &kp F                             &kp G        &kp ESCAPE              &kp HOME                          &kp H                          &kp J  &kp K                &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
-&mt LEFT_SHIFT Z               &kp X                  &kp C                  &kp V                             &kp B        &kp LG(E)               &kp END                           &kp N                          &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt RIGHT_SHIFT SLASH
-&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 6 BACKSPACE  &lt 2 SPACE  &lt 1 LS(CAPSLOCK)      &lt_exit_AML_on_hold 1 BACKSPACE  &lt_exit_AML_on_hold 3 DELETE                                             &lt 2 ENTER
+&mt Q TAB                      &kp W                  &kp E                  &kp R                             &kp T                                                                                      &kp Y                               &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
+&kp A                          &kp S                  &kp D                  &kp F                             &kp G               &kp LG(LS(S))                         &kp ESCAPE                       &kp H                               &kp J  &kp K                &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
+&mt LEFT_SHIFT Z               &kp X                  &kp C                  &kp V                             &lt 6 B             &kp DELETE                            &kp LG(E)                        &kp N                               &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt RIGHT_SHIFT SLASH
+&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LEFT_ALT LEFT_ALT  &lt_exit_AML_on_hold 3 BACKSPACE  &lt 2 LS(CAPSLOCK)  &lt_exit_AML_on_hold 1 LS(SPACE)      &mt_exit_AML_on_hold HOME SPACE  &mt_exit_AML_on_hold END BACKSPACE                                             &lt 2 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -620,10 +619,10 @@
 
         MOUSE_NUM {
             bindings = <
-&kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK          &kp KP_DIVIDE                                                &kp F2  &ht_kp_shihft_click 0 LA(RIGHT_ARROW)  &mkp LCLK                          &trans                             &mkp RCLK
-&kp KP_NUMBER_4                  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt LC(KP_PLUS) KP_PLUS  &mt LC(KP_MINUS) KP_MINUS  &trans             &kp LC(SPACE)  &kp F4  &ht_kp_control_click 0 LA(LEFT_ARROW)  &mt LC(LS(TAB)) LC(PAGE_UP)        &mt LC(LS(UP_ARROW)) UP_ARROW      &mt LC(TAB) LC(PAGE_DOWN)
-&mt LC(NUMBER_1) KP_NUMBER_1     &kp KP_NUMBER_2  &kp KP_NUMBER_3  &ht_kp_sum 0 EQUAL       &ht_kp_sumproduct 0 EQUAL  &kp LA(LS(K))      &kp LS(SPACE)  &kp F9  &kp F12                                &mt LC(LS(LEFT_ARROW)) LEFT_ARROW  &mt LC(LS(DOWN_ARROW)) DOWN_ARROW  &mt LC(LS(RIGHT_ARROW)) RIGHT_ARROW
-&mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &kp KP_DOT       &trans                   &trans                     &trans             &trans         &trans                                                                                                               &trans
+&kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_ASTERISK          &kp KP_DIVIDE                                                                     &kp F2                   &ht_shift_control_click 0 0  &mkp LCLK                    &lt 5 LA(LS(K))            &mkp RCLK
+&kp KP_NUMBER_4                  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &mt LC(KP_PLUS) KP_PLUS  &mt LC(KP_MINUS) KP_MINUS  &trans              &mt LC(LS(UP_ARROW)) UP_ARROW      &kp F4                   &mt LC(SPACE) LS(SPACE)      &mt LC(LS(TAB)) LC(PAGE_UP)  &mt LC(TAB) LC(PAGE_DOWN)  &trans
+&mt LC(NUMBER_1) KP_NUMBER_1     &kp KP_NUMBER_2  &kp KP_NUMBER_3  &ht_kp_sum 0 EQUAL       &ht_kp_sumproduct 0 EQUAL  &kp KP_NUMLOCK      &mt LC(LS(DOWN_ARROW)) DOWN_ARROW  &kp F9                   &kp F12                      &kp LA(LEFT_ARROW)           &kp LA(RIGHT_ARROW)        &trans
+&mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &kp KP_DOT       &trans                   &trans                     &trans              &mt LC(LS(LEFT_ARROW)) LEFT_ARROW  &mt LC(LS(RIGHT)) RIGHT                                                                                       &trans
             >;
         };
 
