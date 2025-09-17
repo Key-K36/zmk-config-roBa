@@ -620,14 +620,14 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_LEFT";
             #binding-cells = <0>;
-            bindings = <&ht_kp_left_align 0 LEFT_ARROW>, <&kp HOME>;
+            bindings = <&ht_kp_left_align 0 LEFT_ARROW>, <&mt LC(LS(TAB)) HOME>;
         };
 
         tap_right: tap_right {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_RIGHT";
             #binding-cells = <0>;
-            bindings = <&ht_kp_right_align 0 RIGHT_ARROW>, <&kp END>;
+            bindings = <&ht_kp_right_align 0 RIGHT_ARROW>, <&mt LC(TAB) END>;
         };
     };
 
