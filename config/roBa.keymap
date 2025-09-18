@@ -621,7 +621,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_SPACE";
             #binding-cells = <0>;
-            bindings = <&lt 2 SPACE>, <&lt 1 LS(SPACE)>, <&kp LC(SPACE)>;
+            bindings = <&lt 2 SPACE>, <&lt 1 LS(SPACE)>;
 
             tapping-term-ms = <250>;
         };
@@ -643,6 +643,28 @@
 
             tapping-term-ms = <250>;
         };
+
+        ht_shift_kp: ht_shift_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SHIFT_KP";
+            bindings = <&kp>, <&shift_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_ctrl_kp: ht_ctrl_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_CTRL_KP";
+            bindings = <&kp>, <&control_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     keymap {
@@ -650,10 +672,10 @@
 
         default_layer {
             bindings = <
-&mt Q TAB                      &ht_kp_windowh 0 W     &kp E                   &ht_kp_remove 0 R          &kp T                                                                                              &kp Y       &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
-&kp A                          &kp S                  &kp D                   &kp F                      &mt LS(LA(RIGHT_ARROW)) G  &kp LG(LS(S))                         &ht_kp_top_align 0 UP_ARROW       &kp H       &kp J  &ht_kp_ketsugou 0 K  &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
-&mt LEFT_SHIFT Z               &kp X                  &ht_kp_calculation 0 C  &mt LC(V) V                &lt 6 B                    &kp DELETE                            &ht_kp_bottom_align 0 DOWN_ARROW  &kp N       &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt LEFT_SHIFT SLASH
-&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_GUI LEFT_GUI  &mt LG(TAB) LA(TAB)     &mt LEFT_ALT LS(CAPSLOCK)  &tap_space                 &lt_exit_AML_on_hold 3 BACKSPACE      &tap_left                         &tap_right                                             &lt 2 ENTER
+&mt Q TAB               &ht_kp_windowh 0 W     &kp E                   &ht_kp_remove 0 R  &kp T                                                                                              &kp Y       &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
+&kp A                   &kp S                  &kp D                   &kp F              &mt LS(LA(RIGHT_ARROW)) G  &kp LG(LS(S))                         &ht_kp_top_align 0 UP_ARROW       &kp H       &kp J  &ht_kp_ketsugou 0 K  &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
+&mt LEFT_SHIFT Z        &kp X                  &ht_kp_calculation 0 C  &mt LC(V) V        &lt 6 B                    &kp DELETE                            &ht_kp_bottom_align 0 DOWN_ARROW  &kp N       &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt LEFT_SHIFT SLASH
+&mt LEFT_CONTROL LC(C)  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)    &kp LS(CAPSLOCK)   &tap_space                 &lt_exit_AML_on_hold 3 BACKSPACE      &tap_left                         &tap_right                                             &lt 2 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -670,10 +692,10 @@
 
         MOUSE_NUM {
             bindings = <
-&kp KP_NUMBER_7                  &kp KP_NUMBER_8  &kp KP_NUMBER_9                       &tap_num_r               &ht_kp_transpose 0 KP_SLASH                                                       &kp F2                               &shift_click       &mkp LCLK            &lt 5 LA(LS(K))  &mkp RCLK
-&kp KP_NUMBER_4                  &kp KP_NUMBER_5  &kp KP_NUMBER_6                       &mt LC(KP_PLUS) KP_PLUS  &tap_num_g                   &trans              &kp ESCAPE                       &kp F4                               &control_click     &kp LA(RIGHT_ARROW)  &kp LS(SPACE)    &kp LC(T)
-&mt LC(NUMBER_1) KP_NUMBER_1     &kp KP_NUMBER_2  &ht_kp_calculation_off 0 KP_NUMBER_3  &tap_num_v               &tap_num_b                   &kp KP_NUMLOCK      &kp LG(E)                        &kp F9                               &ht_kp_memo 0 F12  &kp LA(LEFT_ARROW)   &kp LC(SPACE)    &mt LC(W) LG(D)
-&mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero     &kp KP_DOT                            &trans                   &trans                       &trans              &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                           &trans
+&mt KP_NUMLOCK KP_NUMBER_7       &mt LC(W) KP_NUMBER_8  &mt KP_NUMBER_9 KP_NUMBER_9           &tap_num_r               &ht_kp_transpose 0 KP_SLASH                                               &kp LS(SPACE)                        &ht_shift_kp LEFT_SHIFT 0   &mkp LCLK           &trans               &mkp RCLK
+&mt F4 KP_NUMBER_4               &mt LG(D) KP_NUMBER_5  &kp KP_NUMBER_6                       &mt LC(KP_PLUS) KP_PLUS  &tap_num_g                   &trans      &kp ESCAPE                       &kp LC(SPACE)                        &ht_ctrl_kp LEFT_CONTROL 0  &kp LA(LS(K))       &kp LC(T)            &trans
+&mt LC(NUMBER_1) KP_NUMBER_1     &mt F2 KP_NUMBER_2     &ht_kp_calculation_off 0 KP_NUMBER_3  &tap_num_v               &tap_num_b                   &trans      &kp LG(E)                        &trans                               &ht_kp_memo 0 F12           &kp LA(LEFT_ARROW)  &kp LA(RIGHT_ARROW)  &trans
+&mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero           &kp KP_DOT                            &trans                   &trans                       &trans      &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                                       &trans
             >;
         };
 
