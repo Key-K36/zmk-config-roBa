@@ -447,6 +447,28 @@
             flavor = "balanced";
         };
 
+        ht_shift_kp: ht_shift_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SHIFT_KP";
+            bindings = <&kp>, <&shift_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_ctrl_kp: ht_ctrl_kp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_CTRL_KP";
+            bindings = <&kp>, <&control_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
         ht_kp_ketsugou: ht_kp_ketsugou {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_KP_KETSUGOU";
@@ -642,28 +664,6 @@
             bindings = <&ht_kp_right_align 0 RIGHT_ARROW>, <&mt LC(TAB) END>;
 
             tapping-term-ms = <250>;
-        };
-
-        ht_shift_kp: ht_shift_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_SHIFT_KP";
-            bindings = <&kp>, <&shift_click>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-        };
-
-        ht_ctrl_kp: ht_ctrl_kp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_CTRL_KP";
-            bindings = <&kp>, <&control_click>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
         };
     };
 
