@@ -627,25 +627,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_SPACE";
             #binding-cells = <0>;
-            bindings = <&lt 2 SPACE>, <&lt 1 LS(SPACE)>, <&kp LC(SPACE)>;
-
-            tapping-term-ms = <250>;
-        };
-
-        tap_left: tap_left {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_LEFT";
-            #binding-cells = <0>;
-            bindings = <&ht_kp_left_align 0 LEFT_ARROW>, <&kp HOME>;
-
-            tapping-term-ms = <250>;
-        };
-
-        tap_right: tap_right {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_RIGHT";
-            #binding-cells = <0>;
-            bindings = <&ht_kp_right_align 0 RIGHT_ARROW>, <&kp END>;
+            bindings = <&lt 2 SPACE>, <&lt 1 LS(SPACE)>, <&lt 3 LC(SPACE)>;
 
             tapping-term-ms = <250>;
         };
@@ -667,10 +649,10 @@
 
         default_layer {
             bindings = <
-&mt Q TAB               &ht_kp_windowh 0 W     &kp E                   &ht_kp_remove 0 R  &kp T                                                                                              &kp Y       &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
-&kp A                   &kp S                  &kp D                   &mt LC(LS(L)) F    &mt LS(LA(RIGHT_ARROW)) G  &kp LG(LS(S))                         &ht_kp_top_align 0 UP_ARROW       &kp H       &kp J  &ht_kp_ketsugou 0 K  &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
-&mt LEFT_SHIFT Z        &kp X                  &ht_kp_calculation 0 C  &mt LC(V) V        &lt 6 B                    &mt LG(E) DELETE                      &ht_kp_bottom_align 0 DOWN_ARROW  &kp N       &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt LEFT_SHIFT SLASH
-&mt LEFT_CONTROL LC(C)  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)    &kp LS(CAPSLOCK)   &tap_space                 &lt_exit_AML_on_hold 3 BACKSPACE      &tap_left                         &tap_right                                             &lt 2 ENTER
+&mt Q TAB               &ht_kp_windowh 0 W     &kp E                   &ht_kp_remove 0 R                 &kp T                                                                                                &kp Y                             &kp U  &kp I                &lt 5 O        &mt LEFT_BRACKET P
+&kp A                   &kp S                  &kp D                   &mt LC(LS(L)) F                   &mt LS(LA(RIGHT_ARROW)) G  &kp LG(LS(S))                           &ht_kp_top_align 0 UP_ARROW       &kp H                             &kp J  &ht_kp_ketsugou 0 K  &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
+&mt LEFT_SHIFT Z        &kp X                  &ht_kp_calculation 0 C  &mt LC(V) V                       &lt 6 B                    &mt LG(E) LS(CAPSLOCK)                  &ht_kp_bottom_align 0 DOWN_ARROW  &kp N                             &kp M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt LEFT_SHIFT SLASH
+&mt LEFT_CONTROL LC(C)  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)    &mt_exit_AML_on_hold HOME DELETE  &tap_space                 &mt_exit_AML_on_hold END BACKSPACE      &ht_kp_left_align 0 LEFT_ARROW    &ht_kp_right_align 0 RIGHT_ARROW                                             &lt 2 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
