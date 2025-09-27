@@ -641,7 +641,7 @@
 
         default_layer {
             bindings = <
-&mt Q TAB                      &mt LC(W) W            &mt LG(E) E           &kp R                             &mt LC(T) T                                                                            &mt LC(Y) Y                       &kp U      &kp I                &lt 5 O        &mt LEFT_BRACKET P
+&mt Q TAB                      &kp W                  &mt LG(E) E           &kp R                             &mt LC(T) T                                                                            &mt LC(Y) Y                       &kp U      &kp I                &lt 5 O        &mt LEFT_BRACKET P
 &mt LC(A) A                    &mt LC(S) S            &mt LG(D) D           &mt LC(F) F                       &mt LC(G) G  &kp LG(LS(S))                           &ht_kp_top_align 0 UP_ARROW       &mt LC(H) H                       &kp J      &kp K                &mt AT_SIGN L  &mt RIGHT_BRACKET MINUS
 &mt LEFT_SHIFT Z               &mt LC(X) X            &mt LC(C) C           &mt LC(V) V                       &mt LC(B) B  &lt 6 LS(CAPSLOCK)                      &ht_kp_bottom_align 0 DOWN_ARROW  &kp N                             &mt F12 M  &mt SEMICOLON COMMA  &mt COLON DOT  &mt LEFT_SHIFT SLASH
 &mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)  &mt_exit_AML_on_hold HOME DELETE  &tap_space   &mt_exit_AML_on_hold END BACKSPACE      &ht_kp_left_align 0 LEFT_ARROW    &ht_kp_right_align 0 RIGHT_ARROW                                                 &lt 2 ENTER
