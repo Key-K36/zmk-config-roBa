@@ -519,7 +519,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_NUM_B";
             #binding-cells = <0>;
-            bindings = <&mt LC(B) EQUAL>, <&sum>, <&sumproduct>;
+            bindings = <&kp EQUAL>, <&sum>, <&sumproduct>;
 
             tapping-term-ms = <250>;
         };
