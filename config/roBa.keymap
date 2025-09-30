@@ -85,13 +85,13 @@
         mo_symbol_left {
             bindings = <&mo 1>;
             key-positions = <22 23>;
-            layers = <0 2>;
+            layers = <0>;
         };
 
         mo_symbol_right {
             bindings = <&mo 1>;
             key-positions = <32 33>;
-            layers = <0 2>;
+            layers = <0>;
         };
     };
 
