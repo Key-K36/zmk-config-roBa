@@ -84,13 +84,13 @@
 
         mo_symbol_left {
             bindings = <&mo 1>;
-            key-positions = <37 38 40>;
+            key-positions = <38 39>;
             layers = <0>;
         };
 
         control_shift {
             bindings = <&mt LC(LEFT_SHIFT) LC(LEFT_SHIFT)>;
-            key-positions = <39 38>;
+            key-positions = <38 37>;
             layers = <0 2>;
         };
     };
