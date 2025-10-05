@@ -479,7 +479,7 @@
         ht_calculation_on_off: ht_calculation_on_off {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CALCULATION_ON_OFF";
-            bindings = <&auto_calculation_off>, <&auto_calculation>;
+            bindings = <&auto_calculation>, <&auto_calculation_off>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
