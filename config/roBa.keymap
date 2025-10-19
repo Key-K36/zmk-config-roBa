@@ -535,15 +535,6 @@
 
             tapping-term-ms = <250>;
         };
-
-        tap_enter: tap_enter {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_ENTER";
-            #binding-cells = <0>;
-            bindings = <&lt 2 ENTER>, <&mt LEFT_SHIFT ENTER>;
-
-            tapping-term-ms = <250>;
-        };
     };
 
     keymap {
