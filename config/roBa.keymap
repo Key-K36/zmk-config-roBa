@@ -40,6 +40,24 @@
             layers = <0 2 1>;
         };
 
+        language {
+            bindings = <&mt ESCAPE LS(CAPSLOCK)>;
+            key-positions = <0 1>;
+            layers = <0>;
+        };
+
+        f2 {
+            bindings = <&kp F2>;
+            key-positions = <1 2>;
+            layers = <0>;
+        };
+
+        f4 {
+            bindings = <&kp F4>;
+            key-positions = <3 4>;
+            layers = <0>;
+        };
+
         f12_backslash {
             bindings = <&mt BACKSLASH F12>;
             key-positions = <7 8>;
@@ -52,15 +70,21 @@
             layers = <0>;
         };
 
-        fanction_7 {
+        f7 {
             bindings = <&kp F7>;
             key-positions = <5 6>;
             layers = <0>;
         };
 
-        language {
-            bindings = <&mt ESCAPE LS(CAPSLOCK)>;
-            key-positions = <0 1>;
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <20 21>;
             layers = <0>;
         };
 
@@ -76,36 +100,6 @@
             layers = <0>;
         };
 
-        num_numlock {
-            bindings = <&kp KP_NUMLOCK>;
-            key-positions = <0 1>;
-            layers = <2>;
-        };
-
-        num_slash {
-            bindings = <&kp SLASH>;
-            key-positions = <2 1>;
-            layers = <2>;
-        };
-
-        num_asterisk {
-            bindings = <&kp ASTERISK>;
-            key-positions = <2 3>;
-            layers = <2>;
-        };
-
-        f4 {
-            bindings = <&kp F4>;
-            key-positions = <3 4>;
-            layers = <0>;
-        };
-
-        f2 {
-            bindings = <&kp F2>;
-            key-positions = <1 2>;
-            layers = <0>;
-        };
-
         vlookup {
             bindings = <&vlookup>;
             key-positions = <25 20>;
@@ -118,16 +112,22 @@
             layers = <0>;
         };
 
-        semicolon {
-            bindings = <&kp SEMICOLON>;
-            key-positions = <19 20>;
-            layers = <0>;
+        num_slash {
+            bindings = <&kp SLASH>;
+            key-positions = <1 0>;
+            layers = <2>;
         };
 
-        colon {
-            bindings = <&kp COLON>;
-            key-positions = <20 21>;
-            layers = <0>;
+        num_asterisk {
+            bindings = <&kp ASTERISK>;
+            key-positions = <2 1>;
+            layers = <2>;
+        };
+
+        num_remove {
+            bindings = <&remove_duplicates>;
+            key-positions = <2 3>;
+            layers = <2>;
         };
     };
 
@@ -217,6 +217,20 @@
                 <&kp LEFT_CONTROL &mkp LCLK>;
 
             label = "CONTOLOR_CLICK";
+        };
+
+        control_shift_click: control_shift_click {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&mkp LCLK>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
+
+            label = "CONTROL_SHIFT_CLICK";
         };
 
         remove_duplicates: choufuku {
@@ -352,18 +366,60 @@
             label = "DOUBLE_ZERO";
         };
 
-        control_shift_click: control_shift_click {
+        row_plus: row_plus {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_CONTROL &kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&mkp LCLK>,
-                <&macro_release>,
-                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
+            bindings = <&kp LS(SPACE) &kp LC(KP_PLUS)>;
+            label = "ROW_PLUS";
+        };
 
-            label = "CONTROL_SHIFT_CLICK";
+        row_minus: row_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SPACE) &kp LC(KP_MINUS)>;
+            label = "ROW_MINUS";
+        };
+
+        colum_plus: colum_plus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(KP_PLUS)>;
+            label = "COLUM_PLUS";
+        };
+
+        colum_minus: colum_minus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(KP_MINUS)>;
+            label = "COLUM_MINUS";
+        };
+
+        row_copy: row_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SPACE) &kp LC(C)>;
+            label = "ROW_COPY";
+        };
+
+        row_cut: row_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(SPACE) &kp LC(X)>;
+            label = "ROW_CUT";
+        };
+
+        colum_copy: colum_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(C)>;
+            label = "COLUM_COPY";
+        };
+
+        colum_cut: colum_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(SPACE) &kp LC(C)>;
+            label = "COLUM_CUT";
         };
     };
 
@@ -423,17 +479,6 @@
             quick-tap-ms = <200>;
         };
 
-        ht_kp_duplicates: ht_kp_duplicates {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_KP_DUPLICATES";
-            bindings = <&remove_duplicates>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            flavor = "balanced";
-        };
-
         ht_kp_left_align: ht_kp_left_align {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_KP_LEFT_ALIGN";
@@ -478,6 +523,17 @@
             flavor = "balanced";
         };
 
+        ht_shiftclick_contsiftclick: ht_shiftclick_contsiftclick {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_SHIFTCLICK_CONTSIFTCLICK";
+            bindings = <&control_click>, <&shift_click>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
         ht_calculation_on_off: ht_calculation_on_off {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CALCULATION_ON_OFF";
@@ -489,15 +545,66 @@
             flavor = "balanced";
         };
 
-        ht_shiftclick_contsiftclick: ht_shiftclick_contsiftclick {
+        ht_row_copy_cut: ht_row_copy_cut {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_SHIFTCLICK_CONTSIFTCLICK";
-            bindings = <&control_shift_click>, <&shift_click>;
+            label = "HT_ROW_COPY_CUT";
+            bindings = <&row_cut>, <&row_copy>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             flavor = "balanced";
+        };
+
+        ht_colum_copy_cut: ht_colum_copy_cut {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_COLUM_COPY_CUT";
+            bindings = <&colum_cut>, <&colum_copy>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_row_plus_minus: ht_row_plus_minus {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_ROW_PLUS_MINUS";
+            bindings = <&row_minus>, <&row_plus>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        ht_colum_plus_minus: ht_colum_plus_minus {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_COLUM_PLUS_MINUS";
+            bindings = <&colum_minus>, <&colum_plus>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "balanced";
+        };
+
+        tap_row: tap_row {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_ROW";
+            #binding-cells = <0>;
+            bindings = <&ht_row_copy_cut 0 0>, <&ht_row_plus_minus 0 0>;
+
+            tapping-term-ms = <250>;
+        };
+
+        tap_colum: tap_colum {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_COLUM";
+            #binding-cells = <0>;
+            bindings = <&ht_colum_copy_cut 0 0>, <&ht_colum_plus_minus 0 0>;
+
+            tapping-term-ms = <250>;
         };
 
         tap_paste: tap_paste {
@@ -520,6 +627,7 @@
 
             tapping-term-ms = <250>;
         };
+
     };
 
     keymap {
@@ -529,7 +637,7 @@
             bindings = <
 &mt Q TAB                      &kp W                  &kp E                 &kp R                                          &mt LC(T) T                                                                                     &mt LC(Y) Y              &kp U  &kp I                &lt 5 O                &mt LEFT_BRACKET P
 &mt LC(A) A                    &mt LC(S) S            &mt LG(D) D           &mt LC(F) F                                    &mt LC(G) G                   &kp LG(LS(S))                      &mt LA(RIGHT_ARROW) UP_ARROW   &mt LC(H) H              &kp J  &kp K                &mt AT_SIGN L          &mt RIGHT_BRACKET MINUS
-&mt LEFT_SHIFT Z               &mt LC(X) X            &mt LC(C) C           &mt LC(V) V                                    &mt LC(B) B                   &lt 6 LS(CAPSLOCK)                 &mt LA(LEFT_ARROW) DOWN_ARROW  &kp N                    &kp M  &mt LS(COMMA) COMMA  &mt LS(PERIOD) PERIOD  &mt RIGHT_SHIFT SLASH
+&mt LEFT_SHIFT Z               &mt LC(X) X            &mt LC(C) C           &mt LC(V) V                                    &mt LC(B) B                   &lt 6 LG(E)                        &mt LA(LEFT_ARROW) DOWN_ARROW  &kp N                    &kp M  &mt LS(COMMA) COMMA  &mt LS(PERIOD) PERIOD  &mt RIGHT_SHIFT SLASH
 &mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)  &mt_exit_AML_on_hold LC(LEFT_SHIFT) BACKSPACE  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 DELETE      &mt LS(HOME) LEFT_ARROW        &mt LS(END) RIGHT_ARROW                                                     &lt 2 ENTER
             >;
 
@@ -547,10 +655,10 @@
 
         MOUSE_NUM_SYMBOL {
             bindings = <
-&tap_equal     &mt GRAVE KP_NUMBER_7            &mt LEFT_PARENTHESIS KP_NUMBER_8  &mt RIGHT_PARENTHESIS KP_NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                                                   &kp LG(E)                            &control_click              &mkp LCLK                           &trans                                &mkp RCLK
-&kp LC(LS(L))  &mt DOLLAR KP_NUMBER_4           &mt PERCENT KP_NUMBER_5           &mt AMPERSAND KP_NUMBER_6          &mt LC(KP_PLUS) KP_PLUS    &trans                          &mt LA(LS(RIGHT)) LC(LS(TAB))    &window_hold                         &ht_calculation_on_off 0 0  &ht_shiftclick_contsiftclick 0 0    &ht_kp_top_align 0 LG(UP_ARROW)       &mt LA(F4) LC(W)
-&kp LS(SPACE)  &mt EXCLAMATION KP_NUMBER_1      &mt DOUBLE_QUOTES KP_NUMBER_2     &mt POUND KP_NUMBER_3              &mt COMMA KP_DOT           &tap_paste                      &mt LA(LS(LEFT)) LC(TAB)         &trans                               &merging_cells              &ht_kp_left_align 0 LG(LEFT_ARROW)  &ht_kp_bottom_align 0 LG(DOWN_ARROW)  &ht_kp_right_align 0 LG(RIGHT_ARROW)
-&kp LC(SPACE)  &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero                      &trans                             &trans                     &ht_kp_duplicates 0 DELETE      &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                                                                        &trans
+&tap_equal                  &mt GRAVE KP_NUMBER_7            &mt LEFT_PARENTHESIS KP_NUMBER_8  &mt RIGHT_PARENTHESIS KP_NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                                         &trans                               &control_shift_click        &mkp LCLK                           &trans                                &mkp RCLK
+&mt LC(LS(L)) LC(NUMBER_1)  &mt DOLLAR KP_NUMBER_4           &mt PERCENT KP_NUMBER_5           &mt AMPERSAND KP_NUMBER_6          &mt LC(KP_PLUS) KP_PLUS    &trans                &mt LA(LS(RIGHT)) LC(LS(TAB))    &window_hold                         &ht_calculation_on_off 0 0  &ht_shiftclick_contsiftclick 0 0    &ht_kp_top_align 0 LG(UP_ARROW)       &mt LA(F4) LC(W)
+&tap_row                    &mt EXCLAMATION KP_NUMBER_1      &mt DOUBLE_QUOTES KP_NUMBER_2     &mt POUND KP_NUMBER_3              &mt KP_COMMA KP_DOT        &tap_paste            &mt LA(LS(LEFT)) LC(TAB)         &kp KP_NUMLOCK                       &merging_cells              &ht_kp_left_align 0 LG(LEFT_ARROW)  &ht_kp_bottom_align 0 LG(DOWN_ARROW)  &ht_kp_right_align 0 LG(RIGHT_ARROW)
+&tap_colum                  &mt LC(KP_NUMBER_0) KP_NUMBER_0  &double_zero                      &mt LC(LS(V)) BACKSPACE            &trans                     &mt LC(C) DELETE      &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                                                                        &trans
             >;
         };
 
