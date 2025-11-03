@@ -58,33 +58,21 @@
             layers = <0>;
         };
 
-        f12_backslash {
-            bindings = <&mt BACKSLASH F12>;
-            key-positions = <7 8>;
-            layers = <0>;
-        };
-
-        f9_tilde {
-            bindings = <&mt TILDE F9>;
-            key-positions = <6 7>;
-            layers = <0>;
-        };
-
         f7 {
             bindings = <&kp F7>;
             key-positions = <5 6>;
             layers = <0>;
         };
 
-        semicolon {
-            bindings = <&kp SEMICOLON>;
-            key-positions = <19 20>;
+        f9 {
+            bindings = <&kp F9>;
+            key-positions = <6 7>;
             layers = <0>;
         };
 
-        colon {
-            bindings = <&kp COLON>;
-            key-positions = <20 21>;
+        f12 {
+            bindings = <&kp F12>;
+            key-positions = <7 8>;
             layers = <0>;
         };
 
@@ -627,7 +615,6 @@
 
             tapping-term-ms = <250>;
         };
-
     };
 
     keymap {
@@ -635,10 +622,10 @@
 
         default_layer {
             bindings = <
-&mt Q TAB                      &kp W                  &kp E                 &kp R                                          &mt LC(T) T                                                                                     &mt LC(Y) Y              &kp U  &kp I                &lt 5 O                &mt LEFT_BRACKET P
-&mt LC(A) A                    &mt LC(S) S            &mt LG(D) D           &mt LC(F) F                                    &mt LC(G) G                   &kp LG(LS(S))                      &mt LA(RIGHT_ARROW) UP_ARROW   &mt LC(H) H              &kp J  &kp K                &mt AT_SIGN L          &mt RIGHT_BRACKET MINUS
-&mt LEFT_SHIFT Z               &mt LC(X) X            &mt LC(C) C           &mt LC(V) V                                    &mt LC(B) B                   &lt 6 LG(E)                        &mt LA(LEFT_ARROW) DOWN_ARROW  &kp N                    &kp M  &mt LS(COMMA) COMMA  &mt LS(PERIOD) PERIOD  &mt RIGHT_SHIFT SLASH
-&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)  &mt_exit_AML_on_hold LC(LEFT_SHIFT) BACKSPACE  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 DELETE      &mt LS(HOME) LEFT_ARROW        &mt LS(END) RIGHT_ARROW                                                     &lt 2 ENTER
+&mt Q TAB                      &kp W                  &kp E                 &kp R                                          &mt LC(T) T                                                                                     &mt LC(Y) Y              &kp U  &kp I                &lt 5 O           &mt LEFT_BRACKET P
+&mt LC(A) A                    &mt LC(S) S            &mt LG(D) D           &mt LC(F) F                                    &mt LC(G) G                   &kp LG(LS(S))                      &mt LA(RIGHT_ARROW) UP_ARROW   &mt LC(H) H              &kp J  &kp K                &mt AT_SIGN L     &mt RIGHT_BRACKET MINUS
+&mt LEFT_SHIFT Z               &mt LC(X) X            &mt LC(C) C           &mt LC(V) V                                    &mt LC(B) B                   &lt 6 LG(E)                        &mt LA(LEFT_ARROW) DOWN_ARROW  &kp N                    &kp M  &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt RIGHT_SHIFT SLASH
+&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)  &mt_exit_AML_on_hold LC(LEFT_SHIFT) BACKSPACE  &lt_exit_AML_on_hold 2 SPACE  &lt_exit_AML_on_hold 1 DELETE      &mt LS(HOME) LEFT_ARROW        &mt LS(END) RIGHT_ARROW                                                &lt 2 ENTER
             >;
 
             sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
@@ -646,10 +633,10 @@
 
         APP_CTRL {
             bindings = <
-&trans  &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &kp LG(NUMBER_4)  &kp LG(NUMBER_5)  &kp LG(NUMBER_6)  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans            &trans            &trans            &trans  &trans      &trans  &trans                          &trans
+&kp LS(Q)  &mt LG(NUMBER_7) LS(W)  &mt LG(NUMBER_8) LS(E)  &mt LG(NUMBER_9) LS(R)  &kp LS(T)                      &kp LS(Y)  &kp LS(U)  &kp LS(I)   &mt TILDE LS(O)  &mt BACKSLASH LS(P)
+&kp LS(A)  &mt LG(NUMBER_4) LS(S)  &mt LG(NUMBER_5) LS(D)  &mt LG(NUMBER_6) LS(F)  &kp LS(G)  &trans      &trans  &kp LS(H)  &kp LS(J)  &kp LS(K)   &kp LS(L)        &kp LS(UNDER)
+&kp LS(Z)  &mt LG(NUMBER_1) LS(X)  &mt LG(NUMBER_2) LS(C)  &mt LG(NUMBER_3) LS(V)  &kp LS(B)  &trans      &trans  &kp LS(N)  &kp LS(M)  &kp LS(LT)  &kp LS(GT)       &kp LS(QMARK)
+&trans     &trans                  &trans                  &trans                  &trans     &trans      &trans  &trans                                             &trans
             >;
         };
 
