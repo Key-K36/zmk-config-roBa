@@ -604,7 +604,7 @@
 &mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)  &mt_exit_AML_on_hold LS(CAPSLOCK) BACKSPACE  &lt_exit_AML_on_hold 2 SPACE  &mt LC(LEFT_SHIFT) ENTER      &mt LS(HOME) LEFT_ARROW        &mt LS(END) RIGHT_ARROW                                                &lt 1 ENTER
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         APP_CTRL {
