@@ -52,15 +52,9 @@
             layers = <0>;
         };
 
-        f7 {
-            bindings = <&kp F7>;
-            key-positions = <5 6>;
-            layers = <0>;
-        };
-
-        f12 {
-            bindings = <&kp F12>;
-            key-positions = <7 8>;
+        f7_f12 {
+            bindings = <&mt F12 F7>;
+            key-positions = <8 7>;
             layers = <0>;
         };
 
@@ -181,20 +175,6 @@
                 <&kp LEFT_CONTROL &mkp LCLK>;
 
             label = "CONTOLOR_CLICK";
-        };
-
-        control_shift_click: control_shift_click {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_CONTROL &kp LEFT_SHIFT>,
-                <&macro_tap>,
-                <&mkp LCLK>,
-                <&macro_release>,
-                <&kp LEFT_CONTROL &kp LEFT_SHIFT>;
-
-            label = "CONTROL_SHIFT_CLICK";
         };
 
         remove_duplicates: choufuku {
@@ -487,9 +467,9 @@
             flavor = "balanced";
         };
 
-        ht_shiftclick_contsiftclick: ht_shiftclick_contsiftclick {
+        ht_shiftclick_controlclick: ht_shiftclick_controlclick {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_SHIFTCLICK_CONTSIFTCLICK";
+            label = "HT_SHIFTCLICK_CONTROLCLICK";
             bindings = <&control_click>, <&shift_click>;
 
             #binding-cells = <2>;
@@ -598,10 +578,10 @@
 
         default_layer {
             bindings = <
-&mt Q TAB                      &kp W                  &kp E                 &kp R                                        &mt LC(T) T                                                                                &mt LC(Y) Y              &kp U  &kp I                &lt 5 O           &mt LEFT_BRACKET P
-&mt LC(A) A                    &mt LC(S) S            &mt LG(D) D           &mt LC(F) F                                  &mt LC(G) G                   &kp LG(LS(S))                 &mt LA(RIGHT_ARROW) UP_ARROW   &mt LC(H) H              &kp J  &kp K                &mt AT_SIGN L     &mt RIGHT_BRACKET MINUS
-&mt LEFT_SHIFT Z               &mt LC(X) X            &mt LC(C) C           &mt LC(V) V                                  &mt LC(B) B                   &lt 6 LG(E)                   &mt LA(LEFT_ARROW) DOWN_ARROW  &kp N                    &kp M  &mt SEMICOLON COMMA  &mt COLON PERIOD  &mt RIGHT_SHIFT SLASH
-&mt LEFT_CONTROL LEFT_CONTROL  &mt LEFT_WIN LEFT_WIN  &mt LEFT_ALT LG(TAB)  &mt_exit_AML_on_hold LS(CAPSLOCK) BACKSPACE  &lt_exit_AML_on_hold 2 SPACE  &mt LC(LEFT_SHIFT) ENTER      &mt LS(HOME) LEFT_ARROW        &mt LS(END) RIGHT_ARROW                                                &lt 1 ENTER
+&mt Q TAB               &mt LS(W) W         &mt LS(E) E                &mt LS(R) R                              &mt LS(T) T                                                                                          &mt LS(Y) Y                         &mt LS(U) U  &mt LS(I) I          &lt 5 O             &mt LS(P) P
+&mt LS(A) A             &mt LS(S) S         &mt LS(D) D                &mt LS(F) F                              &mt LS(G) G                   &mt LG(LS(S)) LA(LS(CAPSLOCK))      &mt LA(RIGHT_ARROW) UP_ARROW       &mt LS(H) H                         &mt LS(J) J  &mt LS(K) K          &mt LS(L) L         &mt LS(MINUS) MINUS
+&mt LEFT_SHIFT Z        &mt LS(X) X         &mt LS(C) C                &mt LS(V) V                              &mt LS(B) B                   &lt 6 ENTER                         &mt LA(LEFT_ARROW) DOWN_ARROW      &mt LS(N) N                         &mt LS(M) M  &mt LS(COMMA) COMMA  &mt LS(DOT) PERIOD  &mt LS(SLASH) SLASH
+&mt LEFT_CONTROL LC(C)  &mt LEFT_WIN LG(E)  &mt LEFT_ALT LG(UP_ARROW)  &mt_exit_AML_on_hold LS(HOME) BACKSPACE  &lt_exit_AML_on_hold 2 SPACE  &mt LS(END) LS(CAPSLOCK)            &lt_exit_AML_on_hold 1 LEFT_ARROW  &lt_exit_AML_on_hold 2 RIGHT_ARROW                                                        &mt LS(ENTER) ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
@@ -609,19 +589,19 @@
 
         APP_CTRL {
             bindings = <
-&kp LS(Q)  &mt LG(NUMBER_7) LS(W)  &mt LG(NUMBER_8) LS(E)  &mt LG(NUMBER_9) LS(R)  &kp LS(T)                      &kp LS(Y)  &kp LS(U)  &kp LS(I)   &mt TILDE LS(O)  &mt BACKSLASH LS(P)
-&kp LS(A)  &mt LG(NUMBER_4) LS(S)  &mt LG(NUMBER_5) LS(D)  &mt LG(NUMBER_6) LS(F)  &kp LS(G)  &trans      &trans  &kp LS(H)  &kp LS(J)  &kp LS(K)   &kp LS(L)        &kp LS(UNDER)
-&kp LS(Z)  &mt LG(NUMBER_1) LS(X)  &mt LG(NUMBER_2) LS(C)  &mt LG(NUMBER_3) LS(V)  &kp LS(B)  &trans      &trans  &kp LS(N)  &kp LS(M)  &kp LS(LT)  &kp LS(GT)       &kp LS(QMARK)
-&trans     &trans                  &trans                  &trans                  &trans     &trans      &trans  &trans                                             &trans
+&kp LS(Q)             &kp LG(NUMBER_7)  &kp LG(NUMBER_8)  &kp LG(NUMBER_9)  &trans                      &trans  &trans  &kp TILDE      &kp LS(O)    &kp BACKSLASH
+&trans                &kp LG(NUMBER_4)  &kp LG(NUMBER_5)  &kp LG(NUMBER_6)  &trans  &trans      &trans  &trans  &trans  &trans         &kp AT_SIGN  &kp LEFT_BRACKET
+&mt LEFT_SHIFT LS(Z)  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans  &trans      &trans  &trans  &trans  &kp SEMICOLON  &kp COLON    &kp RIGHT_BRACKET
+&trans                &trans            &trans            &trans            &trans  &trans      &trans  &trans                                      &trans
             >;
         };
 
         MOUSE_NUM_SYMBOL {
             bindings = <
-&tap_equal                       &mt APOSTROPHE KP_NUMBER_7   &mt LEFT_PARENTHESIS KP_NUMBER_8  &mt RIGHT_PARENTHESIS KP_NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                                               &tap_colum                           &control_shift_click        &mkp LCLK                         &trans                            &mkp RCLK
-&mt F9 F4                        &mt DOLLAR KP_NUMBER_4       &mt PERCENT KP_NUMBER_5           &mt AMPERSAND KP_NUMBER_6          &mt LC(KP_PLUS) KP_PLUS    &kp KP_NUMLOCK              &mt LA(LS(RIGHT)) LC(LS(TAB))    &window_hold                         &ht_calculation_on_off 0 0  &ht_shiftclick_contsiftclick 0 0  &ht_kp_top_align 0 UP_ARROW       &mt LA(F4) LC(W)
-&mt LC(KP_NUMBER_0) KP_NUMBER_0  &mt EXCLAMATION KP_NUMBER_1  &mt DOUBLE_QUOTES KP_NUMBER_2     &mt POUND KP_NUMBER_3              &mt KP_COMMA KP_DOT        &tap_paste                  &mt LA(LS(LEFT)) LC(TAB)         &tap_row                             &merging_cells              &ht_kp_left_align 0 LEFT_ARROW    &ht_kp_bottom_align 0 DOWN_ARROW  &ht_kp_right_align 0 RIGHT_ARROW
-&double_zero                     &vlookup                     &round                            &mt LC(LS(V)) LC(V)                &trans                     &mt LC(NUMBER_1) LC(C)      &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                                                                  &trans
+&tap_equal                       &mt APOSTROPHE KP_NUMBER_7   &mt LEFT_PARENTHESIS KP_NUMBER_8  &mt RIGHT_PARENTHESIS KP_NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                                                        &tap_colum                           &tap_row                    &mkp LCLK                        &trans                            &mkp RCLK
+&mt F9 F4                        &mt DOLLAR KP_NUMBER_4       &mt PERCENT KP_NUMBER_5           &mt AMPERSAND KP_NUMBER_6          &mt LC(KP_PLUS) KP_PLUS    &mt LA(LS(CAPSLOCK)) KP_NUMLOCK      &mt LA(LS(RIGHT)) LC(LS(TAB))    &window_hold                         &ht_calculation_on_off 0 0  &ht_shiftclick_controlclick 0 0  &ht_kp_top_align 0 UP_ARROW       &mt LA(F4) LC(W)
+&mt LC(KP_NUMBER_0) KP_NUMBER_0  &mt EXCLAMATION KP_NUMBER_1  &mt DOUBLE_QUOTES KP_NUMBER_2     &mt POUND KP_NUMBER_3              &mt COMMA KP_DOT           &tap_paste                           &mt LA(LS(LEFT)) LC(TAB)         &mt LC(LS(L)) LC(NUMBER_1)           &merging_cells              &ht_kp_left_align 0 LEFT_ARROW   &ht_kp_bottom_align 0 DOWN_ARROW  &ht_kp_right_align 0 RIGHT_ARROW
+&double_zero                     &vlookup                     &round                            &mt LC(LEFT_SHIFT) LC(Z)           &trans                     &mt LC(V) LC(LS(V))                  &mt LC(LS(PAGE_UP)) LC(PAGE_UP)  &mt LC(LS(PAGE_DOWN)) LC(PAGE_DOWN)                                                                                                 &trans
             >;
         };
 
