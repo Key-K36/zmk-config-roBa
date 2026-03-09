@@ -1,10 +1,3 @@
-ご提示いただいた .dtsi の内容に基づき、note記事の指示（pmw3610-alt への対応と最新ZMK環境への適合）を反映した全文を作成しました。
-
-このコードでは、トラックボールの compatible 変更に加え、最新のZMK（Zephyr 4.1以降）で推奨される記述（xiao_d のピン指定など）を維持・整理しています。
-
-そのままコピー＆ペーストしてご利用ください。
-
-DTS
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
@@ -19,7 +12,7 @@ DTS
         transform = <&default_transform>;
         kscan = <&kscan0>;
 
-        keys  //                         w   h    x    y     rot   rx    ry
+        keys
             = <&key_physical_attrs 100 100    0   37       0     0     0>
             , <&key_physical_attrs 100 100  100   12       0     0     0>
             , <&key_physical_attrs 100 100  200    0       0     0     0>
@@ -88,7 +81,6 @@ DTS
 
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
-        label = "KSCAN";
         diode-direction = "col2row";
         row-gpios
             = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
@@ -115,22 +107,13 @@ DTS
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
     };
-
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-    };
 };
 
 &spi0 {
     status = "disabled";
-
     trackball: trackball@0 {
+        compatible = "pixart,pmw3610-alt";
         status = "disabled";
         reg = <0>;
-        /* * [変更点] 最新ZMK環境においてbadjeff氏の旧ドライバー（ALT版）
-         * を呼び出すために compatible を変更 
-         */
-        compatible = "pixart,pmw3610-alt";
     };
 };
