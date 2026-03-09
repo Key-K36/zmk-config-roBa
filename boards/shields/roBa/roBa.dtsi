@@ -112,8 +112,13 @@
 &spi0 {
     status = "disabled";
     trackball: trackball@0 {
-        compatible = "pixart,pmw3610-alt";
+        /* [重要] 標準ドライバーとの競合を避ける設定 */
+        compatible = "pixart,pmw3610-alt"; 
         status = "disabled";
         reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        /* [重要] Zephyr 4.1で必須となった motion-gpios の定義 */
+        motion-gpios = <&xiao_d 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; 
     };
 };
