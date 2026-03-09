@@ -18,22 +18,17 @@
         ;
 };
 
-
 / {
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
 
-    scroller {
-        layers = <4>;
-        input-processors = <
-            &zip_xy_to_scroll_mapper
-        >;
-    };
-
+        scroller {
+            layers = <4>;
+            input-processors = <&zip_xy_to_scroll_mapper>;
+        };
     };
 };
-
 
 &pinctrl {
     spi0_default: spi0_default {
@@ -75,7 +70,6 @@
         zephyr,axis-y = <INPUT_REL_Y>;
         
         res-cpi = <800>;
-
-
+        smart-mode;
     };
 };
