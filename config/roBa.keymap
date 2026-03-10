@@ -604,10 +604,10 @@
 
         MOUSE_NUM {
             bindings = <
-&lt 4 F9                         &kp KP_NUMBER_7   &kp KP_NUMBER_8                         &kp KP_NUMBER_9  &mt LC(KP_MINUS) KP_MINUS                                                                                       &kp F4        &ht_shiftclick_controlclick 0 0   &mkp LCLK       &msc SCRL_UP    &tap_rclk
-&ht_calculation_on_off 0 0       &kp KP_NUMBER_4   &kp KP_NUMBER_5                         &kp KP_NUMBER_6  &mt LC(KP_PLUS) KP_PLUS        &trans                                          &mt LC(LS(TAB)) LA(RIGHT_ARROW)  &window_hold  &mt LC(KP_NUMBER_0) LC(NUMBER_1)  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT
-&ht_doublezero_kp 0 KP_NUMBER_0  &kp KP_NUMBER_1   &kp KP_NUMBER_2                         &kp KP_NUMBER_3  &tap_equal                     &mt LC(LS(RIGHT_ARROW)) LC(LS(DOWN_ARROW))      &mt LC(TAB) LA(LEFT_ARROW)       &kp F12       &merging_cells                    &trans          &tap_colum      &tap_row
-&trans                           &mt COMMA KP_DOT  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &trans           &mt LC(PAGE_UP) LC(PAGE_DOWN)  &kp LC(LS(V))                                   &kp LC(LS(V))                    &tap_paste                                                                      &trans
+&lt 4 F9                         &kp KP_NUMBER_7   &kp KP_NUMBER_8                         &kp KP_NUMBER_9          &mt LC(KP_MINUS) KP_MINUS                                                                       &tap_colum                 &ht_shiftclick_controlclick 0 0  &mkp LCLK       &msc SCRL_UP    &tap_rclk
+&ht_calculation_on_off 0 0       &kp KP_NUMBER_4   &kp KP_NUMBER_5                         &kp KP_NUMBER_6          &mt LC(KP_PLUS) KP_PLUS    &trans                                &mt LA(RIGHT_ARROW) UP_ARROW   &window_hold               &tap_row                         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT
+&ht_doublezero_kp 0 KP_NUMBER_0  &kp KP_NUMBER_1   &kp KP_NUMBER_2                         &kp KP_NUMBER_3          &tap_equal                 &mt LC(KP_NUMBER_0) LC(NUMBER_1)      &mt LA(LEFT_ARROW) DOWN_ARROW  &tap_paste                 &merging_cells                   &kp F4          &trans          &ht_vlookup_round 0 0
+&mt LC(LEFT_SHIFT) LC(C)         &mt COMMA KP_DOT  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt LC(TAB) LC(PAGE_UP)  &kp F12                    &mt LC(LS(TAB)) LC(PAGE_DOWN)         &mt LC(V) LEFT_ARROW           &mt LC(LS(V)) RIGHT_ARROW                                                                   &trans
             >;
         };
 
